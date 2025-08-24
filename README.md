@@ -10,13 +10,13 @@ This is a simulation code for agile flight. It roughly includes three parts:
 This demo generates a **constant-speed circular trajectory** in the NED frame and runs it through the provided Simulink position control model.  
 
 ### 1. Setup
-- Open **MATLAB**.  
-- Make sure the `funct/` and `position_control/` folders are in your project directory.  
-- Paths are added automatically by the script (`addpath` is included).  
+- Download and extract the entire repository.  
+- Open **MATLAB**
 
 ### 2. Run the Script
-Execute the main script:  
+- Open **`circle_traj_demo.m`** in MATLAB.  
+- Click **Run** (or press `F5`).
 
 ```matlab
-CIRCLE_TRAJ_SIMPLE
+circle_traj_demo
 
