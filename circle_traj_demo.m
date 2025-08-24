@@ -1,4 +1,4 @@
-%% CIRCLE_TRAJ_SIMPLE
+%% circle_traj_demo
 % Constant-speed circular trajectory for a multirotor in NED.
 % Theta(t) = theta0 + omega * t.
 % Exports 'ref' (11 signals) and timeseries for Simulink.
