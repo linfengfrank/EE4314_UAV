@@ -90,7 +90,7 @@ count_frame = 1;
      %set(combinedobject, 'matrix',translation);
      rotation1 = makehgtform('xrotate',(pi/180)*(roll(i)));
      rotation2 = makehgtform('yrotate',(pi/180)*(pitch(i)));
-     rotation3 = makehgtform('zrotate',yaw(i));
+     rotation3 = makehgtform('zrotate',(pi/180)*yaw(i));
      %scaling = makehgtform('scale',1-i/20);
      set(combinedobject,'matrix',...
           translation*rotation3*rotation2*rotation1);
