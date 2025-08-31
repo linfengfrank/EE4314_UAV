@@ -1,8 +1,12 @@
-# EE4314_UAV
-This is a simulation code for agile flight. It roughly includes three parts: 
-1. Trajectory generation 
-2. Flight control
-3. Dynamic model
+# Quadrotor Simulation for EE4314
+
+This repository contains a simulation framework for a small quadrotor, developed for the **EE4314** course.  
+
+## Components
+1. **Dynamic Model** – models the quadrotor’s physical dynamics  
+2. **Flight Control** – implements position and attitude controllers  
+3. **Trajectory Generation** – provides reference paths for flight simulation  
+
 
 ---
 ## 🚀 Quick Run Guidance: Circular Trajectory Demo
