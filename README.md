@@ -23,7 +23,7 @@ This demo generates a **constant-speed circular trajectory** in the NED frame an
 
 ---
 
-## Flight Control
+## Flight Control (optional, provided as reference)
 
 ### Position and Velocity Control
 
