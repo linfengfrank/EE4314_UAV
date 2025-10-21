@@ -37,15 +37,15 @@ A detailed description of the model parameters is provided in the table below.
 | $J_{yy}$        | kg·m²   | 4.0515×10⁻⁴       | Moment of inertia along y-axis |
 | $J_{zz}$        | kg·m²   | 6.3890×10⁻⁴       | Moment of inertia along z-axis |
 | $d_i$           | m       | 0.0775            | Distance between the body centre and the rotor |
-| $c_T$           | —       | 2.9265×10⁻⁷       | Thrust coefficient             |
-| $c_M$           | —       | 4.7345×10⁻⁹       | Torque coefficient             |
+| $k_T$           | —       | 2.9265×10⁻⁷       | Thrust coefficient             |
+| $k_Q$           | —       | 4.7345×10⁻⁹       | Torque coefficient             |
 | $c_p$           | —       | [−4160, 7902.2, −510.3]   | Coefficient of the throttle-to-motor speed curve |
 | $J_p$           | kg·m²   | 3.1771×10⁻⁶   | Moment of inertia of the rotor and propeller system along the axis|
 | $c_d$           | —       | 0                 | Damping coefficient   |
-| motor_constant  | —       | 2.8392×10⁻⁷       | Motor parameter used in Gazebo simulation  |
+| Motor_constant  | —       | 2.8392×10⁻⁷       | Motor parameter used in Gazebo simulation  |
 | Moment_constant | —       | 0.0081            | Motor parameter used in Gazebo simulation  |
 | TWR             | —       | 5.0040            | Maximum thrust-to-weight ratio $=4\timesτ_{max}/(m·g)$ |
-| THR_HOVER       | —       | 0.2956            | Throttle at hovering condition   |
+| THR_HOVER       | —       | 0.331            | Throttle at hovering condition   |
 ---
 <!--| $ϕ̇_{max}$       | rad/s   | 3219.9            | Maximum motor speed |
 | $τ_{max}$       | N       | 3.0382            | Maximum thrust   |
@@ -53,7 +53,7 @@ A detailed description of the model parameters is provided in the table below.
 
 **Notes**
 - All parameters correspond to the latest calibration of the NUSWARM drone model.  
-- Values are used in MATLAB/Simulink (defined in **`Init.m`**) and Gazebo-based simulations.
+- Values are used in MATLAB/Simulink (defined in **`Init.m`** and **`Init_control.m`**) and Gazebo-based simulations.
 - All the details can be found in the paper [Gestelt: A framework for accelerating the sim-to-real transition for
 swarm UAVs](./doc/Gestelt_A_Framework_for_Accelerating_the_Sim-To-Real_Transition_for_Swarm_UAVs.pdf).
 
@@ -180,7 +180,7 @@ The total force is not only used for hovering but also for horizontal movement, 
   
 Prioritize vertical control while keeping a horizontal margin. The thurst vector in the xy plane is constrained by the parameter of  MPC\_THR\_XY\_MARG. 
 
-$$F_{\rm xy} < {\rm  MPC\_THR\_XY\_MARG}$$
+$F_{\rm xy} <$ MPC\_THR\_XY\_MARG
 
 and total thurst vector is constrained by the parameter of  MPC\_THR\_MAX
 
@@ -223,7 +223,7 @@ $q_{\rm mix}$ represents the quaternion rotation from the intermediate state $q_
 $$q_{\rm mix} = q_{\rm red, \ sp}^{-1} \cdot q_{\rm sp}$$
 
 
-#### Step 2: Use $w= {\rm \_yaw\_w} = {\rm MC\_YAW\_WEIGHT}$  to modify $q_{\rm mix}$, reducing the calculated yaw error, resulting in a decrease in the final calculated yaw's desired angular velocity.
+#### Step 2: Use $w=$ \_yaw\_w = MC\_YAW\_WEIGHT to modify $q_{\rm mix}$, reducing the calculated yaw error, resulting in a decrease in the final calculated yaw's desired angular velocity.
 
 Since the z-axis of the intermediate state $q_{\rm red, \ sp}$ coordinate system coincides with the z-axis of the desired attitude $q_{\rm sp}$ coordinate system, the representation of $q_{\rm mix}$ in the $q_{\rm red, sp}$ reference frame should be
 
