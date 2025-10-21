@@ -23,6 +23,43 @@ This demo generates a **constant-speed circular trajectory** in the NED frame an
 
 ---
 
+## Dynamic Model (Optional Reference)
+
+The dynamic model is formulated based on the NUSWARM drone platform, following the methods outlined in the lecture notes.  
+A detailed description of the model parameters is provided in the table below.
+
+# Specifications of NUSWARM Drone  
+
+| **Parameter**   | **Unit**| **Value**         | **Description**                |
+|-----------------|---------|-------------------|--------------------------------|
+| $m$             | kg      | 0.302             | Multirotor mass                |
+| $J_{xx}$        | kg·m²   | 3.9195×10⁻⁴       | Moment of inertia along x-axis |
+| $J_{yy}$        | kg·m²   | 4.0515×10⁻⁴       | Moment of inertia along y-axis |
+| $J_{zz}$        | kg·m²   | 6.3890×10⁻⁴       | Moment of inertia along z-axis |
+| $d_i$           | m       | 0.0775            | Distance between the body centre and the rotor |
+| $c_T$           | —       | 2.9265×10⁻⁷       | Thrust coefficient             |
+| $c_M$           | —       | 4.7345×10⁻⁹       | Torque coefficient             |
+| $c_p$           | —       | [−4160, 7902.2, −510.3]   | Coefficient of the throttle-to-motor speed curve |
+| $J_p$           | kg·m²   | 3.1771×10⁻⁶   | Moment of inertia of the rotor and propeller system along the axis|
+| $c_d$           | —       | 0                 | Damping coefficient   |
+| motor_constant  | —       | 2.8392×10⁻⁷       | Motor parameter used in Gazebo simulation  |
+| Moment_constant | —       | 0.0081            | Motor parameter used in Gazebo simulation  |
+| TWR             | —       | 5.0040            | Maximum thrust-to-weight ratio $=4\timesτ_{max}/(m·g)$ |
+| THR_HOVER       | —       | 0.2956            | Throttle at hovering condition   |
+---
+<!--| $ϕ̇_{max}$       | rad/s   | 3219.9            | Maximum motor speed |
+| $τ_{max}$       | N       | 3.0382            | Maximum thrust   |
+| $Q_{max}$       | N·m     | 0.0248            | Maximum torque   | -->
+
+**Notes**
+- All parameters correspond to the latest calibration of the NUSWARM drone model.  
+- Values are used in MATLAB/Simulink (defined in **`Init.m`**) and Gazebo-based simulations.
+- All the details can be found in the paper [Gestelt: A framework for accelerating the sim-to-real transition for
+swarm UAVs](./doc/Gestelt_A_Framework_for_Accelerating_the_Sim-To-Real_Transition_for_Swarm_UAVs.pdf).
+
+
+---
+
 ## Flight Control (optional, provided as reference)
 
 ### Position and Velocity Control
@@ -265,6 +302,4 @@ where $K_{\rm p, \ \Omega} = {\rm diag}(K_{\rm p, p}, K_{\rm p, q}, K_{\rm p, r}
 | $K_{\rm d, r}$            | MC\_YAWRATE\_D           | 0.0         |
 
 
-## Dynamic Model
 
-The dynamic model is developed based on NUSWARM drone platform. The detailed explanation can be found the report of 
