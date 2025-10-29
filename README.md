@@ -15,7 +15,7 @@ This demo generates a **constant-speed circular trajectory** in the NED frame an
 
 ### 1. Setup
 - Download and extract the entire repository.  
-- Open **MATLAB**
+- Open **MATLAB** (recommended version: MATLAB 2025)
 
 ### 2. Run the Script
 - Open **`circle_traj_demo.m`** in MATLAB.  
