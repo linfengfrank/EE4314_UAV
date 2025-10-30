@@ -56,7 +56,7 @@ A detailed description of the model parameters is provided in the table below.
 - Values are used in MATLAB/Simulink (defined in **`Init.m`** and **`Init_control.m`**) and Gazebo-based simulations.
 - All the details can be found in the paper [Gestelt: A framework for accelerating the sim-to-real transition for
 swarm UAVs](./doc/Gestelt_A_Framework_for_Accelerating_the_Sim-To-Real_Transition_for_Swarm_UAVs.pdf).
-
+- You can also find details about [gestelt](https://github.com/Temasek-Dynamics/gestelt).
 
 ---
 
@@ -303,5 +303,7 @@ where $K_{\rm p, \ \Omega} = {\rm diag}(K_{\rm p, p}, K_{\rm p, q}, K_{\rm p, r}
 | $K_{\rm d, q}$            | MC\_PITCHRATE\_D         | 0.0005         |
 | $K_{\rm d, r}$            | MC\_YAWRATE\_D           | 0.0         |
 
-
+---
+## Feedback
+If you have any questions about the repository, feel free to contact Dr Feng LIN at feng_lin@nus.edu.sg 
 
