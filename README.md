@@ -23,7 +23,7 @@ This demo generates a **constant-speed circular trajectory** in the NED frame an
 
 ---
 
-## Dynamic Model (Optional Reference)
+## Dynamic Model (optional, provided as reference)
 
 The dynamic model is formulated based on the NUSWARM drone platform, following the methods outlined in the lecture notes.  
 A detailed description of the model parameters is provided in the table below.
